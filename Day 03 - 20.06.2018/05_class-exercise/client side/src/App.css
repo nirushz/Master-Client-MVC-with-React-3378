@@ -1,0 +1,25 @@
+button{
+    display: block;
+    margin:20px;
+    font-size:1.2em;
+    width: 150px;
+}
+
+
+img{
+    height: 200px;
+}
+
+.pop{
+    height: 200px;
+    font-size:1.2em;
+    width: 200px;
+    margin:30px;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+#head{
+    font-size:3.2em;
+    text-align: center;
+}
