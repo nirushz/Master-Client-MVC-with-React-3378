@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function execPromise(resolve, reject) {
+            let num = Math.random();
+            console.log("random num is: " + num)
+            if (num > 0.5)
+                resolve();
+            else
+                reject();
+        }
+
+        //--------promise---------
+
+        for (let i = 0; i < 4; i++) {
+            let p = new Promise(execPromise);
+
+
+            p.then(() => { console.log("resolve :)") })
+                .catch(() => { console.log("reject :(") });
+        }
+
+
+/*
+output:
+_____________________________________________
+
+random num is: 0.3851622688357994
+random num is: 0.8288889012946448
+random num is: 0.43783533493820426
+random num is: 0.024096811161303133
+resolve :)
+reject :(
+reject :(
+reject :(
+
+*/
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

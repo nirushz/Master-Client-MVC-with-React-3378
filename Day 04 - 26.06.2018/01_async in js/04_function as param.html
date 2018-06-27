@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function myFunc(func1, func2, num) {
+
+            if (num > 0) {
+                func1(num);
+            }
+            else {
+                func2(num);
+            }
+        }
+
+
+
+        myFunc(
+            (n) => { console.log(n * n) },
+            (n) => { console.log(n) },
+            4)
+
+
+
+
+        myFunc(
+            (n) => { console.log(n * n) },
+            (n) => { console.log(n) },
+            -2)
+
+
+            /*
+            output:
+            ____________________________
+            16
+            -2
+            */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

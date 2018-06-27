@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+
+        function f0() {
+            document.getElementById("res").innerHTML += ("f0 start...</br>");
+            setTimeout(() => {
+                document.getElementById("res").innerHTML += ("f0 done </br>");
+            }, 14000)
+        }
+        function f1() {
+            document.getElementById("res").innerHTML += ("f1 start.... </br>");
+            for (let i = 0; i < 10 ** 10; i++);
+            document.getElementById("res").innerHTML += ("f1 done </br>");
+        }
+    </script>
+</head>
+
+<body>
+    <input/>
+    <button onclick="f0()">test f0</button>
+    <button onclick="f1()">test f1</button>
+
+    <div id="res"></div>
+</body>
+
+</html>

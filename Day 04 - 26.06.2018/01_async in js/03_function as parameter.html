@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function execFunc(param) {
+            param();
+        }
+
+        execFunc(() => { console.log("I am first param") });
+
+
+        execFunc(myFunc);
+
+
+        try {
+            execFunc(34);  //send to execFunc non-function value
+        }
+        catch (e) {
+            console.log(e);
+        }
+
+
+        function myFunc() {
+            console.log("I am second param");
+        }
+
+        /*
+
+        output:
+        _________________________________________
+
+        I am first param
+        I am second param
+        TypeError: param is not a function
+        */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

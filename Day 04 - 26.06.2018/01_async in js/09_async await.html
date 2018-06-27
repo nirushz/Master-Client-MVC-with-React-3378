@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+
+        function test1() {
+            fetch("https://restcountries.eu/rest/v2/all?fields=name")
+                .then(
+                    (res) => { return res.json(); }
+                )
+                .then((resBody) => {
+                    console.log(resBody);
+                });
+        }
+
+        async function test0() {
+            let res = await fetch("https://restcountries.eu/rest/v2/all?fields=name");
+            let resBody = await res.json();
+            console.log(resBody);
+
+            return resBody;
+        }
+
+        test0().then((res)=>{console.log(res[0]);});
+        console.log("test0 call");
+
+        test1();
+        console.log("test1 call");
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

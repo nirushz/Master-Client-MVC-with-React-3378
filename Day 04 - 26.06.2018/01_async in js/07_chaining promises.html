@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function getPromise(sec) {
+            return new Promise((resolve, reject) => {
+                (typeof (sec) == "number") ?
+                    setTimeout(resolve, sec) 
+                    : reject();
+            })
+        }
+
+        getPromise(10000)
+            .then(() => {
+                console.log("10000 ms passed");
+                return getPromise(300);
+            })
+            .then(() => {
+                console.log("16000 ms passed");
+                return getPromise("Test");
+            })
+            .then(() => {
+                console.log("20000 ms passed");
+            })
+            .then(() => {
+                console.log("we are done");
+            })
+            .catch(() => {
+                console.log("Sorry you have an error");
+            });
+
+
+            
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
