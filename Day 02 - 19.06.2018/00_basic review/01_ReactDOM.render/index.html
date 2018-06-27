@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+
+  <script type="text/babel">
+  
+      const names = ['Alice', 'Bob', 'Tom'];
+
+      const date=new Date();
+
+      const color="#000001";
+/*
+      inside {} in jsx we can insert:
+        1) trinary opertor
+        2) array.map()
+        3) condition
+        4) function call
+        5) var
+        6) plain js exp
+*/
+
+      ReactDOM.render(
+        <div>
+        <h1>Today is: {date.toString()}</h1>
+        <p>
+          COLOR:
+          {
+            //trinary opertor
+            (color=="#000000")?"black":"non-black"
+          }
+        </p>
+          <p>
+            Message 1 COLOR:
+          {
+            (color=="#000000")?"black is not a happy color":""
+          }
+        </p>
+          <p>
+              Message 2 COLOR:
+          {
+            (color=="#000000") && "black is not a happy color"
+          }
+        </p>
+        {
+
+          names.map(function (name, index) {
+            return <div key={index}>Hello, {name}!</div>
+          })
+        }
+        </div>,
+
+        document.getElementById('example')
+      );
+    </script>
+</body>
+
+</html>

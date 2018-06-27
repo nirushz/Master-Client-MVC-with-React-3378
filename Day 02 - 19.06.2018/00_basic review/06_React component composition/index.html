@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+
+
+      var SecondComponent = React.createClass({
+        render: function() {
+          return (
+              <h1>{this.props.children || "hello from second Component"}</h1>
+          );
+        }
+      });
+
+      var FirstComponent = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <h1>{this.props.msg}</h1>
+              <SecondComponent/>
+
+               <SecondComponent>
+                 {this.props.msg} to second component
+               </SecondComponent>
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <FirstComponent msg="hello first component"/>,
+        document.getElementById('example')
+      );
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+    // class component
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <div>
+            <h1>Hello {this.props.name}</h1>
+            <h2>Age: {this.props.age ? this.props.age: "unknown"}</h2>
+            {this.props.children}
+            <hr/>
+          </div>;
+        }
+      });
+
+      ReactDOM.render(
+        <div>
+          <HelloMessage name="John" age="60" />
+          <HelloMessage name="Bob" />
+          <HelloMessage name="Alice">
+            <h1>Hello I am Alice!</h1>
+          </HelloMessage>
+         </div>
+       ,
+        document.getElementById('example')
+      );
+    </script>
+</body>
+
+</html>
